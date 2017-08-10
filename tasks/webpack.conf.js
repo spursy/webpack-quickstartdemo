@@ -1,4 +1,5 @@
 const {resolve} = require('path');
+const webpack = require('webpack');
 const r = url => resolve(__dirname, url)
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -25,16 +26,16 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 options: {
-                    presets: {
+                    presets: [
                        ['env', {
                          modules: false
                        }]
-                    }
+                    ]
                 }
             },
             {
                 test: /\.sass$/,
-                use: extractSass.extract({
+                use: ExtractTestPlugin.extract({
                     use: [
                         {
                             loader: 'css-loader'
@@ -42,8 +43,7 @@ module.exports = {
                         {
                             loader: 'postcss-loader',
                             options: {
-                                plugins: {
-                                    plugins: (loader) => [
+                                plugins: (loader) => [
                                         require('autoprefixer') ({
                                             browers: [
                                                 'last 2 versions'
@@ -51,7 +51,6 @@ module.exports = {
                                         })
                                     ]
                                 }
-                            }
                         },
                         {
                             loader: 'sass-loader',
@@ -72,15 +71,13 @@ module.exports = {
                 }
             }
         ]
-    }
-},
-{
-    plugins: [
+    },
+     plugins: [
         extractSass,
         new CopyWebpackPlugin([
             {
                 from: {
-                    global: 'pages/**/*.json',
+                    glob: 'pages/**/*.json',
                 },
                 to: ''
             }, 

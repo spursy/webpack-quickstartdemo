@@ -1,4 +1,4 @@
-import regeneratorRuntime from 'regeneratorRuntime'
+import regeneratorRuntime from 'regenerator-runtime'
 
 global.regeneratorRuntime = regeneratorRuntime
 
@@ -9,7 +9,7 @@ global.util = util
 import R from 'ramda'
 global.R = R
 
-const asyncWrap = fn => (options = {}) => new Promise((resolve){
+const asyncWrap = fn => (options = {}) => new Promise((resolve) => {
     let conf = {
         success: res => {
             console.log(res);

@@ -1,0 +1,1 @@
+<view class="container"><view class="userInfo" bindtap="bindViewTap"><text class="userinfo-nickname">{{userInfo.nickname}}</text></view></view>

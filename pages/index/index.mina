@@ -13,7 +13,7 @@ const app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {},
+    userInfo: {nickname: "Spursyy"},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -63,25 +63,25 @@ Page({
 
 <style lang = 'sass'>
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.userinfo 
+  display: flex
+  flex-direction: column
+  align-items: center
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
 
-.userinfo-nickname {
-  color: #aaa;
-}
+.userinfo-avatar 
+  width: 128rpx
+  height: 128rpx
+  margin: 20rpx
+  border-radius: 50%
 
-.usermotto {
-  margin-top: 200px;
-}
+
+.userinfo-nickname 
+  color: #aaa
+
+
+.usermotto 
+  margin-top: 200px
+
 </style>
 

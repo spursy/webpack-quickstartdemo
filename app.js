@@ -1,5 +1,5 @@
-import('./vender.js')
-import('./stytle/base.sass')
+import './vender.js'
+import './stytle/base.sass'
 
 //app.js
 App({
