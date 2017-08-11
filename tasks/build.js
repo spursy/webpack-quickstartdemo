@@ -35,7 +35,7 @@ renderConf.output = {
 }
 
 var compiler = webpack(renderConf)
-fs.writeFileSync(r('./mina/app.js'), JSON.stringify(config.json), 'utf-8')
+fs.writeFileSync(r('./mina/app.json'), JSON.stringify(config.json), 'utf-8')
 
 compiler.watch({
     aggregateTimeout: 300,
