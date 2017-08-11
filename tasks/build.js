@@ -14,7 +14,7 @@ const r = url => resolve(process.cwd(), url)
 
 const webpackConf = require('./webpack.conf');
 const config = require(r('./mina-config'));
-const assetsPath = r('./mina');
+const assetsPath = r('./dist');
 
 rm('-rf', assetsPath)
 mkdir(assetsPath)
@@ -30,12 +30,12 @@ renderConf.entry = entry()
 renderConf.entry.app = config.app
 
 renderConf.output = {
-    path: r('./mina'),
+    path: r('./dist'),
     filename: '[name].js'
 }
 
 var compiler = webpack(renderConf)
-fs.writeFileSync(r('./mina/app.json'), JSON.stringify(config.json), 'utf-8')
+fs.writeFileSync(r('./dist/app.json'), JSON.stringify(config.json), 'utf-8')
 
 compiler.watch({
     aggregateTimeout: 300,

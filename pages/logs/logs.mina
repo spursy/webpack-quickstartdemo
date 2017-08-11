@@ -1,4 +1,3 @@
-<!--logs.wxml-->
 <template lang = 'pug'>
 view.container.log-list
   block(wx:for="{{logs}}", wx:for-item="log")
@@ -23,7 +22,7 @@ Page({
 })
 </script>
 
-<stytle lang = 'sass'>
+<style lang = 'sass'>
 .log-list 
   display: flex
   flex-direction: column
@@ -32,5 +31,5 @@ Page({
 .log-item 
   margin: 10rpx
 
-</stytle>
+</style>
 

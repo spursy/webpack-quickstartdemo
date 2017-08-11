@@ -35,7 +35,7 @@ module.exports = {
             },
             {
                 test: /\.sass$/,
-                use: ExtractTestPlugin.extract({
+                use: extractSass.extract({
                     use: [
                         {
                             loader: 'css-loader'
@@ -80,11 +80,12 @@ module.exports = {
                     glob: 'pages/**/*.json',
                 },
                 to: ''
-            }, 
-            {
-                from: 'static',
-                to: 'static'
             }
+            // , 
+            // {
+            //     from: 'static',
+            //     to: 'static'
+            // }
         ]), 
         new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.UglifyJsPlugin({
