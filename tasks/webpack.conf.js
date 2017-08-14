@@ -11,7 +11,7 @@ const extractSass = new ExtractTestPlugin({
 module.exports = {
     devtool: false,
     output: {
-        path: r('./mina'),
+        path: r('./dist'),
         filename: '[name].js'
     },
     resolve: {
@@ -79,7 +79,7 @@ module.exports = {
                 from: {
                     glob: 'pages/**/*.json',
                 },
-                to: ''
+                to: '' 
             }
             // , 
             // {
